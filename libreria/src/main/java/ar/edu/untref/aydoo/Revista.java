@@ -5,6 +5,10 @@ package ar.edu.untref.aydoo;
  */
 public class Revista extends Producto{
 
+    public Revista(Double valor){
 
+        super(valor);
+
+    }
 
 }

@@ -5,6 +5,10 @@ package ar.edu.untref.aydoo;
  */
 public class Periodico extends Producto {
 
+    public Periodico(Double valor){
 
+        super(valor);
+
+    }
 
 }

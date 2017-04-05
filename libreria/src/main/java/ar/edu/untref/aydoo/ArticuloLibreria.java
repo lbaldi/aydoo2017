@@ -5,6 +5,10 @@ package ar.edu.untref.aydoo;
  */
 public class ArticuloLibreria extends Producto {
 
+    public ArticuloLibreria(Double valor){
 
+        super(valor);
+
+    }
 
 }

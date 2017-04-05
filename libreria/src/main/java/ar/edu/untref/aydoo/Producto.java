@@ -7,15 +7,15 @@ public class Producto {
 
     private Double valor = 0.0;
 
-    public Double obtenerValor(){
+    public Producto(Double valor){
 
-        return valor;
+        this.valor = valor;
 
     }
 
-    public void asignarValor(Double valor){
+    public Double obtenerValor(){
 
-        this.valor = valor;
+        return valor;
 
     }
 
