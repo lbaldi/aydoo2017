@@ -1,20 +1,16 @@
 package ar.edu.untref.aydoo;
 
-import java.util.Calendar;
-
-/**
- * Created by Administrador on 04/04/2017.
- */
 public class Venta {
 
-    private int mes;
-    private Producto producto;
-    private Double valor;
+    protected Integer mes;
+    protected Producto producto;
+    protected Cliente cliente;
 
-    public Venta(int mes, Producto producto){
+    public Venta(int mes, Producto producto, Cliente cliente){
 
         this.mes = mes;
         this.producto = producto;
+        this.cliente = cliente;
 
     }
 
@@ -27,6 +23,18 @@ public class Venta {
     public Producto obtenerProducto(){
 
         return this.producto;
+
+    }
+
+    public Cliente obtenerCliente() {
+
+        return this.cliente;
+
+    }
+
+    public Double obtenerValor(){
+
+        return this.obtenerProducto().obtenerValor();
 
     }
 

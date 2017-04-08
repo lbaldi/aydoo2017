@@ -1,50 +1,46 @@
 package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
-/**
- * Created by Administrador on 04/04/2017.
- */
 public class Libreria {
 
-    private HashMap<Cliente, ArrayList<Venta>> ventasPorCliente;
-    private HashMap<Cliente, ArrayList<Suscripcion>> suscripcionesPorCliente;
-
+    protected List<Venta> ventas;
+    protected List<Suscripcion> suscripciones;
 
     public Libreria() {
 
-        ventasPorCliente = new HashMap();
+        this.ventas = new ArrayList<>();
+        this.suscripciones = new ArrayList<>();
 
     }
 
-    private HashMap<Cliente,  ArrayList<Venta>> obtenerVentas(){
+    protected List<Venta> obtenerVentas(){
 
-        return this.ventasPorCliente;
-
-    }
-
-    private HashMap<Cliente, ArrayList<Suscripcion>> obtenerSuscripciones(){
-
-        return this.suscripcionesPorCliente;
+        return this.ventas;
 
     }
 
-    private ArrayList<Venta> obtenerVentasPorCliente(Cliente cliente){
 
-        return this.obtenerVentas().get(cliente);
-
-    }
-
-    public Double calcularMontoACobrar(int mes, Cliente cliente) {
+    public Double calcularMontoACobrar(Integer mes, Cliente cliente) {
 
         Double montoACobrar = 0.0;
 
-        for(Venta venta: this.obtenerVentasPorCliente(cliente)){
+        for(Venta venta: this.obtenerVentas()){
 
-            if(venta.obtenerMes() == mes){
+            if(venta.obtenerMes() == mes && venta.obtenerCliente() == cliente){
 
-                montoACobrar += venta.obtenerProducto().obtenerValor();
+                montoACobrar += venta.obtenerValor();
+
+            }
+
+        }
+
+        for(Suscripcion suscripcion: this.obtenerSuscripciones()){
+
+            if(suscripcion.perteneAMes(mes) && suscripcion.obtenerCliente() == cliente){
+
+                montoACobrar += suscripcion.obtenerValorMensual();
 
             }
 
@@ -53,27 +49,21 @@ public class Libreria {
         return montoACobrar;
     }
 
-    public void registrarVenta(int mes, Cliente cliente, Producto producto) {
+    public void registrarSuscripcion(Integer mesInicio, Integer cantidadMeses, ProductoSuscripcion producto, Double descuento, Cliente cliente) {
 
-        if(!this.ventasPorCliente.containsKey(cliente)){
-
-            this.ventasPorCliente.put(cliente, new ArrayList<Venta>());
-
-        }
-
-        this.ventasPorCliente.get(cliente).add(new Venta(mes, producto));
+        this.obtenerSuscripciones().add(new Suscripcion(mesInicio, cantidadMeses, producto, descuento, cliente));
 
     }
 
-    public void adherirSuscripcion(Cliente cliente, Producto producto, Double descuento) {
+    public void registrarVenta(int mes, Cliente cliente, Producto producto) {
 
-        if(!this.suscripcionesPorCliente.containsKey(cliente)){
+        this.obtenerVentas().add(new Venta(mes, producto,cliente));
 
-            this.suscripcionesPorCliente.put(cliente, new ArrayList<Suscripcion>());
+    }
 
-        }
+    protected List<Suscripcion> obtenerSuscripciones() {
 
-        this.suscripcionesPorCliente.get(cliente).add(new Suscripcion(producto, descuento));
+        return this.suscripciones;
 
     }
 

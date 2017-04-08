@@ -1,13 +1,21 @@
 package ar.edu.untref.aydoo;
 
-/**
- * Created by Administrador on 04/04/2017.
- */
 public class ArticuloLibreria extends Producto {
 
-    public ArticuloLibreria(Double valor){
+    /**
+     *
+     * @param valor Valor de producto sin IVA
+     * @param iva Porcentual de IVA que aplicara al valor de producto
+     */
+    public ArticuloLibreria(Double valor, Double iva){
 
-        super(valor);
+        super(valor * obtenerIvaCoeficiente(iva));
+
+    }
+
+    private static Double obtenerIvaCoeficiente(Double iva){
+
+        return 1 + (iva / 100);
 
     }
 

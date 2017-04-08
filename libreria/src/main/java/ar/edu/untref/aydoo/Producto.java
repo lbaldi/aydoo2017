@@ -1,11 +1,8 @@
 package ar.edu.untref.aydoo;
 
-/**
- * Created by Administrador on 04/04/2017.
- */
-public class Producto {
+public abstract class Producto {
 
-    private Double valor = 0.0;
+    protected Double valor = 0.0;
 
     public Producto(Double valor){
 

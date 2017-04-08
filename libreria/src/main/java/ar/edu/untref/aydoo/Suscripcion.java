@@ -1,24 +1,76 @@
 package ar.edu.untref.aydoo;
 
-/**
- * Created by Administrador on 04/04/2017.
- */
 public class Suscripcion {
 
-    private Producto producto;
-    private Double descuento;
+    protected Integer mesInicio;
+    protected Integer cantidadMeses;
+    protected ProductoSuscripcion producto;
+    protected Double descuento;
+    protected Cliente cliente;
 
-    public Suscripcion(Producto producto, Double descuento){
+    public Suscripcion(Integer mesInicio, Integer cantidadMeses, ProductoSuscripcion producto, Double descuento, Cliente cliente){
 
+        this.mesInicio = mesInicio;
+        this.cantidadMeses = cantidadMeses;
         this.producto = producto;
         this.descuento = descuento;
+        this.cliente = cliente;
 
     }
 
-    public Double obtenerValor(){
+    public Integer obtenerMesInicio(){
 
-        return this.producto.obtenerValor() * (1 - descuento/100);
+        return this.mesInicio;
 
+    }
+
+    public Integer obtenerCantidadMeses(){
+
+        return this.cantidadMeses;
+
+    }
+
+    public ProductoSuscripcion obtenerProducto(){
+
+        return this.producto;
+
+    }
+
+    public Double obtenerDescuento(){
+
+        return this.descuento;
+
+    }
+
+    public Cliente obtenerCliente(){
+
+        return cliente;
+
+    }
+
+    private static Double obtenerCoeficienteDescuento(Double descuento){
+
+        return 1 - (descuento / 100);
+
+    }
+
+    public boolean perteneAMes(Integer mes) {
+
+        if(mes >= this.obtenerMesInicio() && mes <= (this.obtenerMesInicio() + this.obtenerCantidadMeses())){
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
+
+    }
+
+    public Double obtenerValorMensual() {
+
+        return this.obtenerProducto().obtenerPeriodicidadMensual() * this.obtenerProducto().obtenerValor() * obtenerCoeficienteDescuento(this.obtenerDescuento());
     }
 
 }

@@ -1,13 +1,10 @@
 package ar.edu.untref.aydoo;
 
-/**
- * Created by Administrador on 04/04/2017.
- */
-public class Revista extends Producto{
+public class Revista extends ProductoSuscripcion {
 
-    public Revista(Double valor){
+    public Revista(Double valor, Integer periodicidadMensual){
 
-        super(valor);
+        super(valor, periodicidadMensual);
 
     }
 
