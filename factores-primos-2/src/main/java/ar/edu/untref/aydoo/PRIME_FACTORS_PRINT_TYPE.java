@@ -8,15 +8,11 @@ public enum PRIME_FACTORS_PRINT_TYPE {
     private IPrimeFactorCalcPrinter printer;
 
     PRIME_FACTORS_PRINT_TYPE(IPrimeFactorCalcPrinter primeFactorCalcPrinter) {
-
         printer = primeFactorCalcPrinter;
-
     }
 
     public IPrimeFactorCalcPrinter getPrinter(){
-
         return printer;
-
     }
 
 }
