@@ -9,13 +9,11 @@ public class TestVenta {
 
     @Test
     public void crearVentaYComprarValor(){
-
         Venta venta = new Venta(
                 Calendar.JANUARY,
                 new Revista(10.0, 2),
-                new Cliente()
+                new Cliente("Leandro", "Calle Falsa")
         );
-
         Double valorEsperado = 10.0;
         Double valorObtenido = venta.obtenerValor();
 

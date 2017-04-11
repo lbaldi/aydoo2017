@@ -4,18 +4,13 @@ public abstract class ProductoSuscripcion extends Producto {
 
     protected Integer periodicidadMensual;
 
-    public ProductoSuscripcion(Double valor, Integer periodicidadMensual){
-
+    public ProductoSuscripcion(Double valor, Integer periodicidadMensual) {
         super(valor);
-
         this.periodicidadMensual = periodicidadMensual;
-
     }
 
-    public Integer obtenerPeriodicidadMensual(){
-
+    public Integer obtenerPeriodicidadMensual() {
         return this.periodicidadMensual;
-
     }
 
 }
