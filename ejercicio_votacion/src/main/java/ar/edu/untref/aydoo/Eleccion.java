@@ -2,16 +2,18 @@ package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Eleccion {
 
-    private ArrayList<Voto> votos;
+    private List<Voto> votos;
 
     public Eleccion(){
         this.votos = new ArrayList<>();
     }
 
-    public ArrayList<Voto> obtenerVotos() {
+    public List<Voto> obtenerVotos() {
         return this.votos;
     }
 
@@ -20,7 +22,7 @@ public class Eleccion {
     }
 
     public Candidato obtenerCandidatoMasVotadoNacionalmente() {
-        HashMap<Candidato, Integer> contadorVotos = new HashMap<>();
+        Map<Candidato, Integer> contadorVotos = new HashMap<>();
         // Se recorren todos los votos para contabilizar
         // los pertenecientes a cada candidato
         for (Voto voto : this.obtenerVotos()) {
@@ -40,8 +42,8 @@ public class Eleccion {
         // Se busca el candidato con mayor cantidad de votos
         // en caso de que haya mas de uno con la misma cantidad
         // el resultante sera el primero
-        HashMap.Entry<Candidato, Integer> candidatoMasVotado = null;
-        for (HashMap.Entry<Candidato, Integer> registro : contadorVotos.entrySet()) {
+        Map.Entry<Candidato, Integer> candidatoMasVotado = null;
+        for (Map.Entry<Candidato, Integer> registro : contadorVotos.entrySet()) {
             if (candidatoMasVotado == null || registro.getValue().compareTo(candidatoMasVotado.getValue()) > 0) {
                 candidatoMasVotado = registro;
             }
@@ -50,7 +52,7 @@ public class Eleccion {
     }
 
     public Partido obtenerPartidoMasVotadoSegunProvincia(PROVINCIA provincia) {
-        HashMap<Partido, Integer> contadorVotos = new HashMap<>();
+        Map<Partido, Integer> contadorVotos = new HashMap<>();
         // Se recorren todos los votos para contabilizar
         // los pertenecientes a cada partido en la provincia dada
         for (Voto voto : this.obtenerVotos()) {
@@ -73,8 +75,8 @@ public class Eleccion {
         // Se busca el partido con mayor cantidad de votos
         // en caso de que haya mas de uno con la misma cantidad
         // el resultante sera el primero
-        HashMap.Entry<Partido, Integer> partidoMasVotado = null;
-        for (HashMap.Entry<Partido, Integer> registro : contadorVotos.entrySet()) {
+        Map.Entry<Partido, Integer> partidoMasVotado = null;
+        for (Map.Entry<Partido, Integer> registro : contadorVotos.entrySet()) {
             if (partidoMasVotado == null || registro.getValue().compareTo(partidoMasVotado.getValue()) > 0) {
                 partidoMasVotado = registro;
             }

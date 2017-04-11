@@ -6,7 +6,7 @@ public class Voto {
 
     private Candidato candidato;
 
-    public Voto(PROVINCIA provincia, Candidato candidato){
+    public Voto(PROVINCIA provincia, Candidato candidato) {
         asignarProvincia(provincia);
         asignarCandidato(candidato);
     }

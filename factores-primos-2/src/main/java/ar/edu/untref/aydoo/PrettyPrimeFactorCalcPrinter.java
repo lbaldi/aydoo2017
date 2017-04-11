@@ -1,11 +1,11 @@
 package ar.edu.untref.aydoo;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class PrettyPrimeFactorCalcPrinter implements IPrimeFactorCalcPrinter{
 
     @Override
-    public String print(int number, ArrayList<Integer> factors){
+    public String print(int number, List<Integer> factors){
         StringBuilder result = new StringBuilder(
             String.format("Factores primos %s:", Integer.toString(number))
         );

@@ -1,6 +1,7 @@
 package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class PrimeFactorsCalc {
 
@@ -30,9 +31,9 @@ class PrimeFactorsCalc {
      * primos dado un numero. Para los casos que el numero sea
      * menor a dos devolvera una lista vacia.
      */
-    static ArrayList<Integer> getFactorsList(int number) {
+    public static List<Integer> getFactorsList(int number) {
         int factor = 2;
-        ArrayList<Integer> factors = new ArrayList<>();
+        List<Integer> factors = new ArrayList<>();
         if (number >= factor) {
             while (number % factor != 0) {
                 factor++;
