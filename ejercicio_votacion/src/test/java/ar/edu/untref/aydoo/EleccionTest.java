@@ -3,21 +3,17 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 public class EleccionTest {
 
     @Test
     public void ComprobarVotosVacios(){
-
         Eleccion eleccion = new Eleccion();
-        Assert.assertEquals(0, eleccion.obtenerVotos().size());
 
+        Assert.assertEquals(0, eleccion.obtenerVotos().size());
     }
 
     @Test
     public void ComprobarRegistroVoto(){
-
         Eleccion eleccion = new Eleccion();
         String nombreCandidato = "Mauricio Macri";
         String nombrePartido = "Cambiemos";
@@ -27,8 +23,8 @@ public class EleccionTest {
         eleccion.registrarVoto(primerVoto);
         Voto segundoVoto = new Voto(PROVINCIA.JUJUY, candidato);
         eleccion.registrarVoto(segundoVoto);
-        Assert.assertEquals(2, eleccion.obtenerVotos().size());
 
+        Assert.assertEquals(2, eleccion.obtenerVotos().size());
     }
 
 }
