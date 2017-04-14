@@ -8,7 +8,7 @@ import java.util.Map;
 public class TestIntegracion {
 
     @Test
-    public void testObtenerEstablecimientoConMasBeneficiosOtorgados(){
+    public void testObtenerEstablecimientoConMasBeneficiosOtorgados() {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Tarjetas ofrecidas
         TarjetaBeneficio tarjetaBeneficioPremium = new TarjetaBeneficioPremium();

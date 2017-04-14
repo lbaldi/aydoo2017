@@ -37,7 +37,7 @@ public class ClubDeDescuento {
     public Establecimiento obtenerEstablecimientoConMasBeneficiosOtorgados() {
         Establecimiento establecimientoConMasCantidadDeBeneficios = null;
         Integer cantidadMayorDeBeneficios = 0;
-        for (Establecimiento establecimiento: this.obtenerEstablecimientos()) {
+        for (Establecimiento establecimiento : this.obtenerEstablecimientos()) {
             Integer cantidadDeBeneficios = establecimiento.obtenerCantidadDeBeneficiosOtorgados();
             if (cantidadDeBeneficios > cantidadMayorDeBeneficios) {
                 cantidadMayorDeBeneficios = cantidadDeBeneficios;
@@ -50,7 +50,7 @@ public class ClubDeDescuento {
     public Sucursal obtenerSucursalConMasBeneficiosOtorgados() {
         Sucursal sucursalConMasBeneficiosOtorgados = null;
         Integer cantidadMayorDeBeneficios = 0;
-        for (Establecimiento establecimiento: this.obtenerEstablecimientos()) {
+        for (Establecimiento establecimiento : this.obtenerEstablecimientos()) {
             Sucursal sucursalConMasBeneficiosOtorgadosEnEstablecimiento = establecimiento.obtenerSucursalConMasBeneficiosOtorgados();
             Integer cantidadDeBeneficios = sucursalConMasBeneficiosOtorgadosEnEstablecimiento.obtenerCantidadDeBeneficiosOtorgados();
             if (cantidadDeBeneficios > cantidadMayorDeBeneficios) {
@@ -64,7 +64,7 @@ public class ClubDeDescuento {
     public Map<Cliente, Double> obtenerTotalDeAhorroPorCliente() {
 
         Map<Cliente, Double> clienteYMontoObtenido = new HashMap<>();
-        for(Cliente cliente: this.obtenerClientes()){
+        for (Cliente cliente : this.obtenerClientes()) {
             clienteYMontoObtenido.put(cliente, cliente.obtenerMontoAhorrado());
         }
         return clienteYMontoObtenido;

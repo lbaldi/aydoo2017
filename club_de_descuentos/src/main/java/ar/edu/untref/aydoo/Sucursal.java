@@ -38,7 +38,7 @@ public class Sucursal {
     }
 
     private Double computarValorBeneficio(Double descuento, double valorCompra) {
-        return valorCompra * ( descuento / 100);
+        return valorCompra * (descuento / 100);
     }
 
     protected Double obtenerDescuentoSegunTarjeta(TarjetaBeneficio tarjetaBeneficio) {

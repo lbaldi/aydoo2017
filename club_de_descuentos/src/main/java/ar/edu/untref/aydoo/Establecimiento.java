@@ -40,7 +40,7 @@ public class Establecimiento {
 
     public Integer obtenerCantidadDeBeneficiosOtorgados() {
         Integer cantidadBeneficiosOtorgados = 0;
-        for (Sucursal sucursales: this.obtenerSucursales()) {
+        for (Sucursal sucursales : this.obtenerSucursales()) {
             cantidadBeneficiosOtorgados += sucursales.obtenerCantidadDeBeneficiosOtorgados();
         }
         return cantidadBeneficiosOtorgados;
@@ -57,7 +57,7 @@ public class Establecimiento {
     public Sucursal obtenerSucursalConMasBeneficiosOtorgados() {
         Sucursal sucursalConMasBeneficiosOtorgados = null;
         Integer cantidadMayorBeneficiosOtorgados = 0;
-        for (Sucursal sucursal: this.obtenerSucursales()) {
+        for (Sucursal sucursal : this.obtenerSucursales()) {
             Integer cantidadBeneficiosOtorgados = sucursal.obtenerCantidadDeBeneficiosOtorgados();
             if (cantidadBeneficiosOtorgados > cantidadMayorBeneficiosOtorgados) {
                 sucursalConMasBeneficiosOtorgados = sucursal;

@@ -36,13 +36,13 @@ public class Cliente {
         return this.beneficiosObtenidos;
     }
 
-    public void registrarBeneficio(Beneficio beneficio){
+    public void registrarBeneficio(Beneficio beneficio) {
         this.obtenerBeneficiosObtenidos().add(beneficio);
     }
 
-    public Double obtenerMontoAhorrado(){
+    public Double obtenerMontoAhorrado() {
         double montoAhorrado = 0;
-        for(Beneficio beneficio: this.obtenerBeneficiosObtenidos()){
+        for (Beneficio beneficio : this.obtenerBeneficiosObtenidos()) {
             montoAhorrado += beneficio.obtenerValor();
         }
         return montoAhorrado;
