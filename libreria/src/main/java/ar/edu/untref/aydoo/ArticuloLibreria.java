@@ -1,5 +1,8 @@
 package ar.edu.untref.aydoo;
 
+/**
+ * Entity
+ */
 public class ArticuloLibreria extends Producto {
 
     /**

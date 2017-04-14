@@ -1,5 +1,9 @@
 package ar.edu.untref.aydoo;
 
+/**
+ * Value Object
+ * Agreggate
+ */
 public class Venta {
 
     protected Integer mes;

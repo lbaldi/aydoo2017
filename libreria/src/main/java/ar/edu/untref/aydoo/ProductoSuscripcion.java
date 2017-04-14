@@ -1,5 +1,8 @@
 package ar.edu.untref.aydoo;
 
+/**
+ * Entity
+ */
 public abstract class ProductoSuscripcion extends Producto {
 
     protected Integer periodicidadMensual;

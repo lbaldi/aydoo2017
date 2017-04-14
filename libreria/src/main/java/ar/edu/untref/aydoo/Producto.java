@@ -1,5 +1,8 @@
 package ar.edu.untref.aydoo;
 
+/**
+ * Entity
+ */
 public abstract class Producto {
 
     protected Double valor = 0.0;

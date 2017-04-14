@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Entity
+ * Repository
+ */
 public class Libreria {
 
     protected List<Venta> ventas;
