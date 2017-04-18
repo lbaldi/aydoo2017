@@ -43,7 +43,7 @@ public class TestIntegracion {
         s3.registrarBeneficio(carlos, 1000.0);
         s3.registrarBeneficio(clienteClassic, 1000.0);
         s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
+        s3.registrarBeneficio(clienteClassic, 500.0);
         s3.registrarBeneficio(clienteClassic, 1000.0);
         s3.registrarBeneficio(clienteClassic, 1000.0);
 
