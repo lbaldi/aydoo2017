@@ -113,5 +113,14 @@ public class TestEstablecimiento {
         Assert.assertNull(establecimiento.obtenerSucursalConMasBeneficiosOtorgados());
     }
 
+    @Test(expected = ExcepcionPorcentajeDescuentoEstablecimiento.class)
+    public void adherirTipoBeneficioConDescuentoQueNoApliqueAPoliticaDescuento(){
+        String nombreEstablecimiento = "Nombre Establecimiento";
+        String emailEstabablecimiento = "example@example.com";
+        Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
+        Double descuento = 4.9;
+
+        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
+    }
 
 }

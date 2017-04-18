@@ -35,6 +35,7 @@ public class Establecimiento {
     }
 
     public void adherirTipoBeneficio(double descuento, TARJETA_BENEFICIO tarjetaBeneficio) {
+        if (!PoliticaDescuento.comprobarPorcentajeDescuento(descuento)) throw new ExcepcionPorcentajeDescuentoEstablecimiento();
         this.obtenerTipoBeneficios().put(tarjetaBeneficio, descuento);
     }
 
