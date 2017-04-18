@@ -1,18 +1,18 @@
 package ar.edu.untref.aydoo;
 
-public class Beneficio {
+public class Producto {
 
-    protected Cliente cliente;
+    protected String nombre;
 
     protected Double valor;
 
-    public Beneficio(Cliente cliente, Double valor) {
-        this.cliente = cliente;
+    public Producto(String nombre, Double valor) {
+        this.nombre = nombre;
         this.asignarValor(valor);
     }
 
-    public Cliente obtenerCliente() {
-        return this.cliente;
+    public String obtenerNombre() {
+        return this.nombre;
     }
 
     public Double obtenerValor() {
@@ -21,7 +21,7 @@ public class Beneficio {
 
     protected void asignarValor(Double valor) {
         if (valor <= 0.0) {
-            throw new ExcepcionValorBeneficio();
+            throw new ExcepcionValorProducto();
         }
         this.valor = valor;
     }

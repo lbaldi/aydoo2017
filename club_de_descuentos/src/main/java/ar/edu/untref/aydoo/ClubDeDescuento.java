@@ -62,7 +62,6 @@ public class ClubDeDescuento {
     }
 
     /**
-     *
      * @return Diccionario que contiene para cada cliente el monto ahorrado.
      * Se obvian aquellos clientes que no tuvieron ahorros.
      */

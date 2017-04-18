@@ -13,7 +13,7 @@ public class Cliente {
 
     protected List<Beneficio> beneficiosObtenidos;
 
-    public Cliente(String nombre, String mail,TARJETA_BENEFICIO tarjetaBeneficio) {
+    public Cliente(String nombre, String mail, TARJETA_BENEFICIO tarjetaBeneficio) {
         this.nombre = nombre;
         this.mail = mail;
         this.tarjetaBeneficio = tarjetaBeneficio;

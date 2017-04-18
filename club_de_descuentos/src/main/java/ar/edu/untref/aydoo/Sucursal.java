@@ -21,11 +21,11 @@ public class Sucursal {
         this.beneficiosOtorgados = new ArrayList<>();
     }
 
-    public String obtenerNombre(){
+    public String obtenerNombre() {
         return this.nombre;
     }
 
-    public String obtenerDireccion(){
+    public String obtenerDireccion() {
         return this.direccion;
     }
 
@@ -37,26 +37,22 @@ public class Sucursal {
         return this.beneficiosOtorgados;
     }
 
-    // @TODO Test
-    public void registrarBeneficio(Cliente cliente, double valorCompra) {
+    public void registrarBeneficioCompraProducto(Cliente cliente, Producto producto) {
         Double descuento = this.obtenerDescuentoSegunTarjeta(cliente.obtenerTarjetaBeneficio());
-        Double valorBeneficio = this.computarValorBeneficio(descuento, valorCompra);
+        Double valorBeneficio = this.computarValorBeneficio(descuento, producto.obtenerValor());
         Beneficio beneficioOtorgado = new Beneficio(cliente, valorBeneficio);
         this.obtenerBeneficiosOtorgados().add(beneficioOtorgado);
         cliente.registrarBeneficio(beneficioOtorgado);
     }
 
-    // @TODO Test
     protected Double computarValorBeneficio(Double descuento, double valorCompra) {
         return valorCompra * (descuento / 100);
     }
 
-    // @TODO Test
     protected Double obtenerDescuentoSegunTarjeta(TARJETA_BENEFICIO tarjetaBeneficio) {
         return this.obtenerEstablecimiento().obtenerTipoBeneficios().get(tarjetaBeneficio);
     }
 
-    // @TODO Test
     public Integer obtenerCantidadDeBeneficiosOtorgados() {
         return this.obtenerBeneficiosOtorgados().size();
     }

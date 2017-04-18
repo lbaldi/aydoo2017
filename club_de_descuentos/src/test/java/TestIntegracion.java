@@ -29,20 +29,20 @@ public class TestIntegracion {
         Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
         Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
         Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-
-        s1.registrarBeneficio(carlos, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(juan, 1000.0);
-        s1.registrarBeneficio(clientePremium, 1000.0);
-        s1.registrarBeneficio(clientePremium, 1000.0);
-        s3.registrarBeneficio(carlos, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 500.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
+        Producto producto = new Producto("Producto Prueba", 1000.0);
+        s1.registrarBeneficioCompraProducto(carlos, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(juan, producto);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto);
+        s3.registrarBeneficioCompraProducto(carlos, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
 
         Establecimiento establecimientoConMasBeneficiosOtorgados = clubDeDescuento.obtenerEstablecimientoConMasBeneficiosOtorgados();
 
@@ -72,19 +72,21 @@ public class TestIntegracion {
         Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
         Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
 
-        s1.registrarBeneficio(carlos, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(juan, 1000.0);
-        s1.registrarBeneficio(clientePremium, 1000.0);
-        s1.registrarBeneficio(clientePremium, 1000.0);
-        s3.registrarBeneficio(carlos, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
+        Producto producto = new Producto("Producto Prueba", 100.0);
+
+        s1.registrarBeneficioCompraProducto(carlos, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(juan, producto);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto);
+        s3.registrarBeneficioCompraProducto(carlos, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
 
         Sucursal sucursalConMasBeneficiosOtorgados = clubDeDescuento.obtenerSucursalConMasBeneficiosOtorgados();
 
@@ -114,19 +116,21 @@ public class TestIntegracion {
         Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
         Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
 
-        s1.registrarBeneficio(carlos, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(clienteClassic, 1000.0);
-        s1.registrarBeneficio(juan, 1000.0);
-        s1.registrarBeneficio(clientePremium, 1000.0);
-        s1.registrarBeneficio(clientePremium, 1000.0);
-        s3.registrarBeneficio(carlos, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
-        s3.registrarBeneficio(clienteClassic, 1000.0);
+        Producto producto = new Producto("Producto Prueba", 1000.0);
+
+        s1.registrarBeneficioCompraProducto(carlos, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(juan, producto);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto);
+        s3.registrarBeneficioCompraProducto(carlos, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
 
         Map<Cliente, Double> totalDeAhorroPorClienteEsperado = new HashMap<>();
         totalDeAhorroPorClienteEsperado.put(juan, 200.0);
