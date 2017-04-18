@@ -46,11 +46,11 @@ public class Establecimiento {
         return cantidadBeneficiosOtorgados;
     }
 
-    private Set<Sucursal> obtenerSucursales() {
+    public Set<Sucursal> obtenerSucursales() {
         return this.sucursales;
     }
 
-    public void adherirSucursal(Sucursal sucursal) {
+    void adherirSucursal(Sucursal sucursal) {
         this.obtenerSucursales().add(sucursal);
     }
 

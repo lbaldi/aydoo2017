@@ -61,11 +61,19 @@ public class ClubDeDescuento {
         return sucursalConMasBeneficiosOtorgados;
     }
 
+    /**
+     *
+     * @return Diccionario que contiene para cada cliente el monto ahorrado.
+     * Se obvian aquellos clientes que no tuvieron ahorros.
+     */
     public Map<Cliente, Double> obtenerTotalDeAhorroPorCliente() {
 
         Map<Cliente, Double> clienteYMontoObtenido = new HashMap<>();
         for (Cliente cliente : this.obtenerClientes()) {
-            clienteYMontoObtenido.put(cliente, cliente.obtenerMontoAhorrado());
+            Double montoAhorrado = cliente.obtenerMontoAhorrado();
+            if (montoAhorrado > 0.0) {
+                clienteYMontoObtenido.put(cliente, montoAhorrado);
+            }
         }
         return clienteYMontoObtenido;
     }

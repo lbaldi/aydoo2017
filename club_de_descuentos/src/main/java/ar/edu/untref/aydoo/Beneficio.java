@@ -8,7 +8,7 @@ public class Beneficio {
 
     public Beneficio(Cliente cliente, Double valor) {
         this.cliente = cliente;
-        this.valor = valor;
+        this.asignarValor(valor);
     }
 
     public Cliente obtenerCliente() {
@@ -17,6 +17,13 @@ public class Beneficio {
 
     public Double obtenerValor() {
         return this.valor;
+    }
+
+    protected void asignarValor(Double valor){
+        if (valor <= 0.0) {
+            throw new ExcepcionValorBeneficio();
+        }
+        this.valor = valor;
     }
 
 }
