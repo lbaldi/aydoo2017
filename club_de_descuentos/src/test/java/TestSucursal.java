@@ -42,7 +42,7 @@ public class TestSucursal {
     }
 
     @Test
-    public void crearSucursarYObtenerBeneficiosOtorgados(){
+    public void crearSucursarYObtenerCantidadBeneficiosOtorgados(){
         String nombreSucursal = "Nombre Sucursal";
         String direccionSucursal = "Calle Falsa";
         String nombreEstablecimiento = "Nombre Establecimiento";
@@ -52,6 +52,19 @@ public class TestSucursal {
         Integer cantidadBeneficiosOtorgados = 0;
 
         Assert.assertEquals(cantidadBeneficiosOtorgados, sucursal.obtenerCantidadDeBeneficiosOtorgados());
+    }
+
+    @Test
+    public void crearSucursalYObtenerBeneficiosOtorgados(){
+        String nombreSucursal = "Nombre Sucursal";
+        String direccionSucursal = "Calle Falsa";
+        String nombreEstablecimiento = "Nombre Establecimiento";
+        String emailEstabablecimiento = "example@example.com";
+        Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
+        Sucursal sucursal = new Sucursal(nombreSucursal, direccionSucursal, establecimiento);
+        int cantidadBeneficiosOtorgados = 0;
+
+        Assert.assertEquals(cantidadBeneficiosOtorgados, sucursal.obtenerBeneficiosOtorgados().size());
     }
 
 }

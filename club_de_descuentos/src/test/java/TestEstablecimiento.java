@@ -1,7 +1,4 @@
-import ar.edu.untref.aydoo.Establecimiento;
-import ar.edu.untref.aydoo.Sucursal;
-import ar.edu.untref.aydoo.TarjetaBeneficio;
-import ar.edu.untref.aydoo.TarjetaBeneficioClassic;
+import ar.edu.untref.aydoo.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -80,7 +77,7 @@ public class TestEstablecimiento {
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Double descuento = 20.0;
-        establecimiento.adherirTipoBeneficio(descuento, new TarjetaBeneficioClassic());
+        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
 
         Assert.assertEquals(1, establecimiento.obtenerTipoBeneficios().size());
     }
@@ -91,9 +88,8 @@ public class TestEstablecimiento {
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Double descuento = 20.0;
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        establecimiento.adherirTipoBeneficio(descuento, tarjetaBeneficio);
-        establecimiento.adherirTipoBeneficio(descuento, tarjetaBeneficio);
+        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
+        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
 
         Assert.assertEquals(1, establecimiento.obtenerTipoBeneficios().size());
     }

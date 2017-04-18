@@ -1,7 +1,4 @@
-import ar.edu.untref.aydoo.Beneficio;
-import ar.edu.untref.aydoo.Cliente;
-import ar.edu.untref.aydoo.TarjetaBeneficio;
-import ar.edu.untref.aydoo.TarjetaBeneficioClassic;
+import ar.edu.untref.aydoo.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,8 +8,7 @@ public class TestCliente {
     public void crearClienteYObtenerNombreCorrecto() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
 
         Assert.assertEquals(nombreCliente, clienteLeandro.obtenerNombre());
     }
@@ -21,8 +17,7 @@ public class TestCliente {
     public void crearClienteYObtenerNombreIncorrecto() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
         String nombreIncorrecto = "Nombre Incorrecto";
 
         Assert.assertNotEquals(nombreIncorrecto, clienteLeandro.obtenerNombre());
@@ -32,8 +27,7 @@ public class TestCliente {
     public void crearClienteYObtenerEmailCorrecto() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
 
         Assert.assertEquals(emailCliente, clienteLeandro.obtenerMail());
     }
@@ -42,8 +36,7 @@ public class TestCliente {
     public void crearClienteYObtenerEmailIncorrecto() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
         String emailIncorrecto = "Email Incorrecto";
 
         Assert.assertNotEquals(emailIncorrecto, clienteLeandro.obtenerMail());
@@ -53,29 +46,25 @@ public class TestCliente {
     public void crearClienteYObtenerTarjetaBeneficioCorrecta() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
 
-        Assert.assertEquals(tarjetaBeneficio, clienteLeandro.obtenerTarjetaBeneficio());
+        Assert.assertEquals(TARJETA_BENEFICIO.CLASSIC, clienteLeandro.obtenerTarjetaBeneficio());
     }
 
     @Test
     public void crearClienteYObtenerTarjetaBeneficioIncorrecta() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
-        TarjetaBeneficio tarjetaBeneficioIncorrecta = new TarjetaBeneficioClassic();
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
 
-        Assert.assertNotEquals(tarjetaBeneficioIncorrecta, clienteLeandro.obtenerTarjetaBeneficio());
+        Assert.assertNotEquals(TARJETA_BENEFICIO.PREMIUM, clienteLeandro.obtenerTarjetaBeneficio());
     }
 
     @Test
     public void crearClienteYObtenerBeneficiosCorrectos() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
 
         Assert.assertEquals(0, clienteLeandro.obtenerBeneficiosObtenidos().size());
     }
@@ -84,8 +73,7 @@ public class TestCliente {
     public void crearClienteYObtenerBeneficiosIncorrectos() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
 
         Assert.assertNotEquals(1, clienteLeandro.obtenerBeneficiosObtenidos().size());
     }
@@ -94,8 +82,7 @@ public class TestCliente {
     public void agregarBeneficioAClienteYComprobarCantidadBeneficios() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
         Beneficio beneficio = new Beneficio(clienteLeandro, 100.0);
         clienteLeandro.registrarBeneficio(beneficio);
 
@@ -106,8 +93,7 @@ public class TestCliente {
     public void agregarBeneficiosAClienteYComprobarMontoAhorrado() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
-        TarjetaBeneficio tarjetaBeneficio = new TarjetaBeneficioClassic();
-        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, tarjetaBeneficio);
+        Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
         Beneficio beneficio100 = new Beneficio(clienteLeandro, 100.0);
         Beneficio beneficio200 = new Beneficio(clienteLeandro, 200.0);
         clienteLeandro.registrarBeneficio(beneficio100);

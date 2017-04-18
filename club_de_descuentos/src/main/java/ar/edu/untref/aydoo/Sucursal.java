@@ -47,12 +47,12 @@ public class Sucursal {
     }
 
     // @TODO Test
-    private Double computarValorBeneficio(Double descuento, double valorCompra) {
+    protected Double computarValorBeneficio(Double descuento, double valorCompra) {
         return valorCompra * (descuento / 100);
     }
 
     // @TODO Test
-    protected Double obtenerDescuentoSegunTarjeta(TarjetaBeneficio tarjetaBeneficio) {
+    protected Double obtenerDescuentoSegunTarjeta(TARJETA_BENEFICIO tarjetaBeneficio) {
         return this.obtenerEstablecimiento().obtenerTipoBeneficios().get(tarjetaBeneficio);
     }
 

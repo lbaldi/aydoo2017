@@ -9,11 +9,11 @@ public class Cliente {
 
     protected String mail;
 
-    protected TarjetaBeneficio tarjetaBeneficio;
+    protected TARJETA_BENEFICIO tarjetaBeneficio;
 
     protected List<Beneficio> beneficiosObtenidos;
 
-    public Cliente(String nombre, String mail, TarjetaBeneficio tarjetaBeneficio) {
+    public Cliente(String nombre, String mail,TARJETA_BENEFICIO tarjetaBeneficio) {
         this.nombre = nombre;
         this.mail = mail;
         this.tarjetaBeneficio = tarjetaBeneficio;
@@ -28,7 +28,7 @@ public class Cliente {
         return mail;
     }
 
-    public TarjetaBeneficio obtenerTarjetaBeneficio() {
+    public TARJETA_BENEFICIO obtenerTarjetaBeneficio() {
         return tarjetaBeneficio;
     }
 
