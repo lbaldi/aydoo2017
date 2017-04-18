@@ -82,8 +82,10 @@ public class TestCliente {
     public void agregarBeneficioAClienteYComprobarCantidadBeneficios() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
+        Establecimiento establecimiento = new Establecimiento("Est.", "mail@mail");
+        Producto producto = new Producto("Producto", 100.0);
         Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
-        Beneficio beneficio = new Beneficio(clienteLeandro, 100.0);
+        Beneficio beneficio = new Beneficio(establecimiento, clienteLeandro, producto, producto.obtenerValor(), 100.0);
         clienteLeandro.registrarBeneficio(beneficio);
 
         Assert.assertEquals(1, clienteLeandro.obtenerBeneficiosObtenidos().size());
@@ -93,9 +95,11 @@ public class TestCliente {
     public void agregarBeneficiosAClienteYComprobarMontoAhorrado() {
         String nombreCliente = "Leandro";
         String emailCliente = "baldileandro@gmail.com";
+        Establecimiento establecimiento = new Establecimiento("Est.", "mail@mail");
+        Producto producto = new Producto("Producto", 100.0);
         Cliente clienteLeandro = new Cliente(nombreCliente, emailCliente, TARJETA_BENEFICIO.CLASSIC);
-        Beneficio beneficio100 = new Beneficio(clienteLeandro, 100.0);
-        Beneficio beneficio200 = new Beneficio(clienteLeandro, 200.0);
+        Beneficio beneficio100 = new Beneficio(establecimiento, clienteLeandro, producto, producto.obtenerValor(), 100.0);
+        Beneficio beneficio200 = new Beneficio(establecimiento, clienteLeandro, producto, producto.obtenerValor(), 200.0);
         clienteLeandro.registrarBeneficio(beneficio100);
         clienteLeandro.registrarBeneficio(beneficio200);
         Double montoAhorradoEsperado = 300.0;

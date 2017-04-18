@@ -40,7 +40,7 @@ public class Sucursal {
     public void registrarBeneficioCompraProducto(Cliente cliente, Producto producto) {
         Double descuento = this.obtenerDescuentoSegunTarjeta(cliente.obtenerTarjetaBeneficio());
         Double valorBeneficio = this.computarValorBeneficio(descuento, producto.obtenerValor());
-        Beneficio beneficioOtorgado = new Beneficio(cliente, valorBeneficio);
+        Beneficio beneficioOtorgado = new Beneficio(this.obtenerEstablecimiento(), cliente, producto, producto.obtenerValor(), valorBeneficio);
         this.obtenerBeneficiosOtorgados().add(beneficioOtorgado);
         cliente.registrarBeneficio(beneficioOtorgado);
     }
