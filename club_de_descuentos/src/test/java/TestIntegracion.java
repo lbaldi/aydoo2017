@@ -1,4 +1,5 @@
 import ar.edu.untref.aydoo.*;
+import org.junit.Ignore;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -152,6 +153,25 @@ public class TestIntegracion {
         totalDeAhorroPorClienteEsperado.put(carlos, 300.0);
         totalDeAhorroPorClienteEsperado.put(clienteClassic, 1600.0);
         totalDeAhorroPorClienteEsperado.put(clientePremium, 400.0);
+        Map<Cliente, Double> totalDeAhorroPorCliente = clubDeDescuento.obtenerTotalDeAhorroPorCliente(this.mes);
+
+        Assert.assertEquals(totalDeAhorroPorClienteEsperado, totalDeAhorroPorCliente);
+    }
+
+    @Ignore
+    public void obtenerTotalDeAhorroPorClienteEnUnaCompraDosPorUno() {
+        ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
+        // Estableclimiento El altillo , sucursales y tipos de beneficio segun tarjeta
+        Establecimiento elAltillo = new Establecimiento("El Altillo", "libreria@elaltillo.edu.ar");
+        Sucursal s4 = new Sucursal("s4", "Direccion s4", elAltillo);
+        // Adhesion cliente
+        Cliente mateo = clubDeDescuento.adherirCliente("Mateo", "mateo@aydoo.edu.ar", TARJETA_BENEFICIO.CLASSIC);
+        Producto libroMartinFierro = new Producto("Martin Fierro", 100.0);
+        Producto libroElCantarDelCid = new Producto("El Cantar del Cid", 80.0);
+        s4.registrarBeneficioCompraDosPorUno(mateo, libroMartinFierro, libroElCantarDelCid, this.mes);
+
+        Map<Cliente, Double> totalDeAhorroPorClienteEsperado = new HashMap<>();
+        totalDeAhorroPorClienteEsperado.put(mateo, 80.0);
         Map<Cliente, Double> totalDeAhorroPorCliente = clubDeDescuento.obtenerTotalDeAhorroPorCliente(this.mes);
 
         Assert.assertEquals(totalDeAhorroPorClienteEsperado, totalDeAhorroPorCliente);

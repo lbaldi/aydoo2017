@@ -64,4 +64,6 @@ public class Sucursal {
         ).collect(Collectors.toList()).size();
     }
 
+    public void registrarBeneficioCompraDosPorUno(Cliente cliente, Producto productoA, Producto productoB, Mes mes) {
+    }
 }
