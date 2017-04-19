@@ -2,6 +2,7 @@ package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Sucursal {
 
@@ -37,10 +38,10 @@ public class Sucursal {
         return this.beneficiosOtorgados;
     }
 
-    public void registrarBeneficioCompraProducto(Cliente cliente, Producto producto) {
+    public void registrarBeneficioCompraProducto(Cliente cliente, Producto producto, Mes mes) {
         Double descuento = this.obtenerDescuentoSegunTarjeta(cliente.obtenerTarjetaBeneficio());
         Double valorBeneficio = this.computarValorBeneficio(descuento, producto.obtenerValor());
-        Beneficio beneficioOtorgado = new Beneficio(this.obtenerEstablecimiento(), cliente, producto, producto.obtenerValor(), valorBeneficio);
+        Beneficio beneficioOtorgado = new Beneficio(this.obtenerEstablecimiento(), cliente, producto, producto.obtenerValor(), valorBeneficio, mes);
         this.obtenerBeneficiosOtorgados().add(beneficioOtorgado);
         cliente.registrarBeneficio(beneficioOtorgado);
     }
@@ -55,6 +56,12 @@ public class Sucursal {
 
     public Integer obtenerCantidadDeBeneficiosOtorgados() {
         return this.obtenerBeneficiosOtorgados().size();
+    }
+
+    public Integer obtenerCantidadDeBeneficiosOtorgadosPorMes(Mes mes) {
+        return this.obtenerBeneficiosOtorgados().stream().filter(
+                beneficio -> (beneficio.obtenerMes() == mes)
+        ).collect(Collectors.toList()).size();
     }
 
 }

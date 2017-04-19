@@ -12,13 +12,15 @@ public class Beneficio {
 
     protected Double valor;
 
+    protected Mes mes;
 
-    public Beneficio(Establecimiento establecimiento, Cliente cliente, Producto producto, Double valorHabitual, Double valor) {
+    public Beneficio(Establecimiento establecimiento, Cliente cliente, Producto producto, Double valorHabitual, Double valor, Mes mes) {
         this.establecimiento = establecimiento;
         this.cliente = cliente;
         this.producto = producto;
         this.asignarValorHabitual(valorHabitual);
         this.asignarValor(valor);
+        this.mes = mes;
     }
 
     public Cliente obtenerCliente() {
@@ -39,6 +41,10 @@ public class Beneficio {
 
     public Producto obtenerProducto() {
         return this.producto;
+    }
+
+    public Mes obtenerMes() {
+        return this.mes;
     }
 
     protected void asignarValor(Double valor) {

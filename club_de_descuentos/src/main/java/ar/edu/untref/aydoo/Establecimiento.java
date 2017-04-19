@@ -35,7 +35,7 @@ public class Establecimiento {
     }
 
     public void adherirTipoBeneficio(double descuento, TARJETA_BENEFICIO tarjetaBeneficio) {
-        if (!PoliticaDescuento.comprobarPorcentajeDescuento(descuento)) throw new ExcepcionPorcentajeDescuentoEstablecimiento();
+        PoliticaDescuento.comprobarPorcentajeDescuento(descuento);
         this.obtenerTipoBeneficios().put(tarjetaBeneficio, descuento);
     }
 
@@ -55,11 +55,11 @@ public class Establecimiento {
         this.obtenerSucursales().add(sucursal);
     }
 
-    public Sucursal obtenerSucursalConMasBeneficiosOtorgados() {
+    public Sucursal obtenerSucursalConMasBeneficiosOtorgados(Mes mes) {
         Sucursal sucursalConMasBeneficiosOtorgados = null;
         Integer cantidadMayorBeneficiosOtorgados = 0;
         for (Sucursal sucursal : this.obtenerSucursales()) {
-            Integer cantidadBeneficiosOtorgados = sucursal.obtenerCantidadDeBeneficiosOtorgados();
+            Integer cantidadBeneficiosOtorgados = sucursal.obtenerCantidadDeBeneficiosOtorgadosPorMes(mes);
             if (cantidadBeneficiosOtorgados > cantidadMayorBeneficiosOtorgados) {
                 sucursalConMasBeneficiosOtorgados = sucursal;
                 cantidadMayorBeneficiosOtorgados = cantidadBeneficiosOtorgados;

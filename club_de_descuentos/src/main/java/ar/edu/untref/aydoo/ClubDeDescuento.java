@@ -47,12 +47,12 @@ public class ClubDeDescuento {
         return establecimientoConMasCantidadDeBeneficios;
     }
 
-    public Sucursal obtenerSucursalConMasBeneficiosOtorgados() {
+    public Sucursal obtenerSucursalConMasBeneficiosOtorgados(Mes mes) {
         Sucursal sucursalConMasBeneficiosOtorgados = null;
         Integer cantidadMayorDeBeneficios = 0;
         for (Establecimiento establecimiento : this.obtenerEstablecimientos()) {
-            Sucursal sucursalConMasBeneficiosOtorgadosEnEstablecimiento = establecimiento.obtenerSucursalConMasBeneficiosOtorgados();
-            Integer cantidadDeBeneficios = sucursalConMasBeneficiosOtorgadosEnEstablecimiento.obtenerCantidadDeBeneficiosOtorgados();
+            Sucursal sucursalConMasBeneficiosOtorgadosEnEstablecimiento = establecimiento.obtenerSucursalConMasBeneficiosOtorgados(mes);
+            Integer cantidadDeBeneficios = sucursalConMasBeneficiosOtorgadosEnEstablecimiento.obtenerCantidadDeBeneficiosOtorgadosPorMes(mes);
             if (cantidadDeBeneficios > cantidadMayorDeBeneficios) {
                 sucursalConMasBeneficiosOtorgados = sucursalConMasBeneficiosOtorgadosEnEstablecimiento;
                 cantidadMayorDeBeneficios = cantidadDeBeneficios;
@@ -65,11 +65,11 @@ public class ClubDeDescuento {
      * @return Diccionario que contiene para cada cliente el monto ahorrado.
      * Se obvian aquellos clientes que no tuvieron ahorros.
      */
-    public Map<Cliente, Double> obtenerTotalDeAhorroPorCliente() {
+    public Map<Cliente, Double> obtenerTotalDeAhorroPorCliente(Mes mes) {
 
         Map<Cliente, Double> clienteYMontoObtenido = new HashMap<>();
         for (Cliente cliente : this.obtenerClientes()) {
-            Double montoAhorrado = cliente.obtenerMontoAhorrado();
+            Double montoAhorrado = cliente.obtenerMontoAhorrado(mes);
             if (montoAhorrado > 0.0) {
                 clienteYMontoObtenido.put(cliente, montoAhorrado);
             }

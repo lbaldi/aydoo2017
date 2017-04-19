@@ -1,5 +1,6 @@
 import ar.edu.untref.aydoo.*;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -7,8 +8,16 @@ import java.util.Map;
 
 public class TestIntegracion {
 
+    private Mes mes;
+
+    @Before
+    public void configurarEscenario() {
+        this.mes = new Mes("2017/04");
+    }
+
     @Test
     public void testObtenerEstablecimientoConMasBeneficiosOtorgados() {
+        Mes abril2017 = new Mes("2017/04");
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
         Establecimiento heladeriaA = new Establecimiento("Heladeria A", "heladeria@restaurantB.edu.ar");
@@ -30,19 +39,19 @@ public class TestIntegracion {
         Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
         Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
         Producto producto = new Producto("Producto Prueba", 1000.0);
-        s1.registrarBeneficioCompraProducto(carlos, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(juan, producto);
-        s1.registrarBeneficioCompraProducto(clientePremium, producto);
-        s1.registrarBeneficioCompraProducto(clientePremium, producto);
-        s3.registrarBeneficioCompraProducto(carlos, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(carlos, producto, abril2017);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s1.registrarBeneficioCompraProducto(juan, producto, abril2017);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto, abril2017);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto, abril2017);
+        s3.registrarBeneficioCompraProducto(carlos, producto, abril2017);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
 
         Establecimiento establecimientoConMasBeneficiosOtorgados = clubDeDescuento.obtenerEstablecimientoConMasBeneficiosOtorgados();
 
@@ -74,21 +83,25 @@ public class TestIntegracion {
 
         Producto producto = new Producto("Producto Prueba", 100.0);
 
-        s1.registrarBeneficioCompraProducto(carlos, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(juan, producto);
-        s1.registrarBeneficioCompraProducto(clientePremium, producto);
-        s1.registrarBeneficioCompraProducto(clientePremium, producto);
-        s3.registrarBeneficioCompraProducto(carlos, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(carlos, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(juan, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(carlos, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
 
-        Sucursal sucursalConMasBeneficiosOtorgados = clubDeDescuento.obtenerSucursalConMasBeneficiosOtorgados();
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
+
+        Sucursal sucursalConMasBeneficiosOtorgados = clubDeDescuento.obtenerSucursalConMasBeneficiosOtorgados(this.mes);
 
         Assert.assertEquals(s1, sucursalConMasBeneficiosOtorgados);
     }
@@ -118,26 +131,28 @@ public class TestIntegracion {
 
         Producto producto = new Producto("Producto Prueba", 1000.0);
 
-        s1.registrarBeneficioCompraProducto(carlos, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s1.registrarBeneficioCompraProducto(juan, producto);
-        s1.registrarBeneficioCompraProducto(clientePremium, producto);
-        s1.registrarBeneficioCompraProducto(clientePremium, producto);
-        s3.registrarBeneficioCompraProducto(carlos, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
-        s3.registrarBeneficioCompraProducto(clienteClassic, producto);
+        s1.registrarBeneficioCompraProducto(carlos, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(juan, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto, this.mes);
+        s1.registrarBeneficioCompraProducto(clientePremium, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(carlos, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
+
+        s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
 
         Map<Cliente, Double> totalDeAhorroPorClienteEsperado = new HashMap<>();
         totalDeAhorroPorClienteEsperado.put(juan, 200.0);
         totalDeAhorroPorClienteEsperado.put(carlos, 300.0);
         totalDeAhorroPorClienteEsperado.put(clienteClassic, 1600.0);
         totalDeAhorroPorClienteEsperado.put(clientePremium, 400.0);
-        Map<Cliente, Double> totalDeAhorroPorCliente = clubDeDescuento.obtenerTotalDeAhorroPorCliente();
+        Map<Cliente, Double> totalDeAhorroPorCliente = clubDeDescuento.obtenerTotalDeAhorroPorCliente(this.mes);
 
         Assert.assertEquals(totalDeAhorroPorClienteEsperado, totalDeAhorroPorCliente);
     }

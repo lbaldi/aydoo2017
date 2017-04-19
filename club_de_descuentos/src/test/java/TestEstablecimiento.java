@@ -110,7 +110,7 @@ public class TestEstablecimiento {
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
 
-        Assert.assertNull(establecimiento.obtenerSucursalConMasBeneficiosOtorgados());
+        Assert.assertNull(establecimiento.obtenerSucursalConMasBeneficiosOtorgados(new Mes("Un mes")));
     }
 
     @Test(expected = ExcepcionPorcentajeDescuentoEstablecimiento.class)
