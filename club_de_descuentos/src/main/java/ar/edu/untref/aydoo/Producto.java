@@ -26,4 +26,34 @@ public class Producto {
         this.valor = valor;
     }
 
+    /**
+     * @return Devuelve el producto con mayor valor. En caso de que sean los dos del mismo
+     * valor se prioriza el segundo.
+     */
+    public static Producto obtenerProductoMayorValor(Producto productoA, Producto productoB){
+        Producto productoMayorValor;
+        if (productoA.obtenerValor() > productoB.obtenerValor()) {
+            productoMayorValor = productoA;
+        }
+        else {
+            productoMayorValor = productoB;
+        }
+        return  productoMayorValor;
+    }
+
+    /**
+     * @return Devuelve el producto con menor valor. En caso de que sean los dos del mismo
+     * valor se prioriza el segundo.
+     */
+    public static Producto obtenerProductoMenorValor(Producto productoA, Producto productoB){
+        Producto productoMenorValor;
+        if (productoA.obtenerValor() < productoB.obtenerValor()) {
+            productoMenorValor = productoA;
+        }
+        else {
+            productoMenorValor = productoB;
+        }
+        return productoMenorValor;
+    }
+
 }

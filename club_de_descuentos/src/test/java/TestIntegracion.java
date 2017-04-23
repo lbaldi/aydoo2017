@@ -158,7 +158,7 @@ public class TestIntegracion {
         Assert.assertEquals(totalDeAhorroPorClienteEsperado, totalDeAhorroPorCliente);
     }
 
-    @Ignore
+    @Test
     public void obtenerTotalDeAhorroPorClienteEnUnaCompraDosPorUno() {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento El altillo , sucursales y tipos de beneficio segun tarjeta

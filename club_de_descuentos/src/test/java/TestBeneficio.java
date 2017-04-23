@@ -56,14 +56,6 @@ public class TestBeneficio {
     }
 
     @Test(expected = ExcepcionValorBeneficio.class)
-    public void crearBeneficioConValorCero() {
-        Establecimiento establecimiento = new Establecimiento("Nombre Est.", "mail@mail");
-        Producto producto = new Producto("Prueba", 100.0);
-        Cliente clienteLeandro = new Cliente("Leandro","baldileandro@gmail.com", TARJETA_BENEFICIO.CLASSIC);
-        Beneficio beneficio = new Beneficio(establecimiento, clienteLeandro, producto, producto.obtenerValor(), 0.0, this.mes);
-    }
-
-    @Test(expected = ExcepcionValorBeneficio.class)
     public void errorAlCrearBeneficioConValorNegativo() {
         Establecimiento establecimiento = new Establecimiento("Nombre Est.", "mail@mail");
         Producto producto = new Producto("Prueba", 100.0);
