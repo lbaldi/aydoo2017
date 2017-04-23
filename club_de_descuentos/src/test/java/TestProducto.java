@@ -44,13 +44,67 @@ public class TestProducto {
     }
 
     @Test(expected = ExcepcionValorProducto.class)
-    public void errorAlCrearProductConValorNegativo(){
+    public void errorAlCrearProductConValorNegativo() {
         new Producto("Prueba", -10.0);
     }
 
     @Test(expected = ExcepcionValorProducto.class)
-    public void errorAlCrearProductoConValorCero(){
+    public void errorAlCrearProductoConValorCero() {
         new Producto("Prueba", 0.0);
+    }
+
+    @Test
+    public void obtenerProductoMayorValorEntreProductoDiezYProductoCinco() {
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+        Producto productoValorCinco = new Producto("Producto con valor cinco", 5.0);
+
+        Producto productoObtenido = Producto.obtenerProductoMayorValor(productoValorDiez, productoValorCinco);
+        Assert.assertEquals(productoValorDiez, productoObtenido);
+    }
+
+    @Test
+    public void obtenerProductoMayorValorEntreProductoDiezYOtroProductoDiez() {
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+        Producto otroProductoValorDiez = new Producto("Producto con valor diez", 10.0);
+
+        Producto productoObtenido = Producto.obtenerProductoMayorValor(productoValorDiez, otroProductoValorDiez);
+        Assert.assertEquals(otroProductoValorDiez, productoObtenido);
+    }
+
+    @Test
+    public void obtenerProductoMayorValorEntreProductoCincoYProductoDiez() {
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+        Producto ProductoValorCinco = new Producto("Producto con valor cinco", 10.0);
+
+        Producto productoObtenido = Producto.obtenerProductoMayorValor(ProductoValorCinco, productoValorDiez);
+        Assert.assertEquals(productoValorDiez, productoObtenido);
+    }
+
+    @Test
+    public void obtenerProductoMenorValorEntreProductoDiezYProductoCinco() {
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+        Producto productoValorCinco = new Producto("Producto con valor cinco", 5.0);
+
+        Producto productoObtenido = Producto.obtenerProductoMenorValor(productoValorDiez, productoValorCinco);
+        Assert.assertEquals(productoValorCinco, productoObtenido);
+    }
+
+    @Test
+    public void obtenerProductoMenorValorEntreProductoCincoYProductoDiez() {
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+        Producto productoValorCinco = new Producto("Producto con valor cinco", 5.0);
+
+        Producto productoObtenido = Producto.obtenerProductoMenorValor(productoValorCinco, productoValorDiez);
+        Assert.assertEquals(productoValorCinco, productoObtenido);
+    }
+
+    @Test
+    public void obtenerProductoMenorValorEntreProductoDiezYOtroProductoDiez() {
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+        Producto otroProductoValorDiez = new Producto("Producto con valor diez", 10.0);
+
+        Producto productoObtenido = Producto.obtenerProductoMenorValor(productoValorDiez, otroProductoValorDiez);
+        Assert.assertEquals(otroProductoValorDiez, productoObtenido);
     }
 
 }

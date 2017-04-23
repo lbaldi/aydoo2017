@@ -5,7 +5,7 @@ import org.junit.Test;
 public class TestEstablecimiento {
 
     @Test
-    public void crearEstablecimientoYObtenerNombreCorrecto(){
+    public void crearEstablecimientoYObtenerNombreCorrecto() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -14,7 +14,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstablecimientoYObtenerNombreIncorrecto(){
+    public void crearEstablecimientoYObtenerNombreIncorrecto() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -24,7 +24,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstablecimientoYObtenerMailCorrecto(){
+    public void crearEstablecimientoYObtenerMailCorrecto() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -33,7 +33,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstablecimientoYObtenerMailIncorrecto(){
+    public void crearEstablecimientoYObtenerMailIncorrecto() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -43,7 +43,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstablecimientoYObtenerSucursalesVacias(){
+    public void crearEstablecimientoYObtenerSucursalesVacias() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -52,7 +52,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void adherirSucursalYObtenerSucursales(){
+    public void adherirSucursalYObtenerSucursales() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -63,7 +63,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstablecimientoYObtenerTipoBeneficioVacio(){
+    public void crearEstablecimientoYObtenerTipoBeneficioVacio() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -72,7 +72,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void adherirTipoBeneficioYObtenerTipoBeneficio(){
+    public void adherirTipoBeneficioYObtenerTipoBeneficio() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -83,7 +83,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void adherirDosTiposBeneficioConMismaTarjetaYObtenerTipoBeneficio(){
+    public void adherirDosTiposBeneficioConMismaTarjetaYObtenerTipoBeneficio() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -95,7 +95,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstablecimientoYObtenerCantidadDeBeneficiosOtorgados(){
+    public void crearEstablecimientoYObtenerCantidadDeBeneficiosOtorgados() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -105,7 +105,7 @@ public class TestEstablecimiento {
     }
 
     @Test
-    public void crearEstableclientoYObtenerSucursalConMasBeneficiosOtorgados(){
+    public void crearEstableclientoYObtenerSucursalConMasBeneficiosOtorgados() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
@@ -114,7 +114,7 @@ public class TestEstablecimiento {
     }
 
     @Test(expected = ExcepcionPorcentajeDescuentoEstablecimiento.class)
-    public void adherirTipoBeneficioConDescuentoQueNoApliqueAPoliticaDescuento(){
+    public void adherirTipoBeneficioConDescuentoQueNoApliqueAPoliticaDescuento() {
         String nombreEstablecimiento = "Nombre Establecimiento";
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);

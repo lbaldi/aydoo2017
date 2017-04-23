@@ -70,9 +70,7 @@ public class ClubDeDescuento {
         Map<Cliente, Double> clienteYMontoObtenido = new HashMap<>();
         for (Cliente cliente : this.obtenerClientes()) {
             Double montoAhorrado = cliente.obtenerMontoAhorrado(mes);
-            if (montoAhorrado > 0.0) {
-                clienteYMontoObtenido.put(cliente, montoAhorrado);
-            }
+            clienteYMontoObtenido.put(cliente, montoAhorrado);
         }
         return clienteYMontoObtenido;
     }

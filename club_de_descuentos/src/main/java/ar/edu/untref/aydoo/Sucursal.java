@@ -68,7 +68,7 @@ public class Sucursal {
         Producto productoMayorValor = Producto.obtenerProductoMayorValor(productoA, productoB);
         Producto productoMenorValor = Producto.obtenerProductoMenorValor(productoA, productoB);
         PoliticaDescuento.comprobarValorMinimoDosPorUno(productoMayorValor.obtenerValor());
-        String nombreProductoDosPorUno = String.format("%s + %s",productoMayorValor.obtenerNombre(), productoMenorValor.obtenerNombre());
+        String nombreProductoDosPorUno = String.format("%s + %s", productoMayorValor.obtenerNombre(), productoMenorValor.obtenerNombre());
         Double valorProductoDosPorUno = productoMayorValor.obtenerValor() + productoMenorValor.obtenerValor();
         Producto productoDosPorUno = new Producto(nombreProductoDosPorUno, valorProductoDosPorUno);
         Beneficio beneficioOtorgado = new Beneficio(this.obtenerEstablecimiento(), cliente, productoDosPorUno, productoDosPorUno.obtenerValor(), productoMenorValor.obtenerValor(), mes);

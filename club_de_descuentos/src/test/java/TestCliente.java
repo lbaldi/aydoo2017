@@ -8,7 +8,7 @@ public class TestCliente {
     private Mes mes;
 
     @Before
-    public void configurarEscenario(){
+    public void configurarEscenario() {
         this.mes = new Mes("2017/04");
     }
 

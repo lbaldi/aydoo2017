@@ -1,12 +1,11 @@
-import ar.edu.untref.aydoo.Establecimiento;
-import ar.edu.untref.aydoo.Sucursal;
+import ar.edu.untref.aydoo.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestSucursal {
 
     @Test
-    public void crearSucursalYObtenerNombreCorrecto(){
+    public void crearSucursalYObtenerNombreCorrecto() {
         String nombreSucursal = "Nombre Sucursal";
         String direccionSucursal = "Calle Falsa";
         String nombreEstablecimiento = "Nombre Establecimiento";
@@ -18,7 +17,7 @@ public class TestSucursal {
     }
 
     @Test
-    public void crearSucursalYObtenerDireccionCorrecto(){
+    public void crearSucursalYObtenerDireccionCorrecto() {
         String nombreSucursal = "Nombre Sucursal";
         String direccionSucursal = "Calle Falsa";
         String nombreEstablecimiento = "Nombre Establecimiento";
@@ -30,7 +29,7 @@ public class TestSucursal {
     }
 
     @Test
-    public void crearSucursalYObtenerEstablecimiento(){
+    public void crearSucursalYObtenerEstablecimiento() {
         String nombreSucursal = "Nombre Sucursal";
         String direccionSucursal = "Calle Falsa";
         String nombreEstablecimiento = "Nombre Establecimiento";
@@ -42,7 +41,7 @@ public class TestSucursal {
     }
 
     @Test
-    public void crearSucursarYObtenerCantidadBeneficiosOtorgados(){
+    public void crearSucursarYObtenerCantidadBeneficiosOtorgados() {
         String nombreSucursal = "Nombre Sucursal";
         String direccionSucursal = "Calle Falsa";
         String nombreEstablecimiento = "Nombre Establecimiento";
@@ -55,7 +54,7 @@ public class TestSucursal {
     }
 
     @Test
-    public void crearSucursalYObtenerBeneficiosOtorgados(){
+    public void crearSucursalYObtenerBeneficiosOtorgados() {
         String nombreSucursal = "Nombre Sucursal";
         String direccionSucursal = "Calle Falsa";
         String nombreEstablecimiento = "Nombre Establecimiento";
@@ -65,6 +64,20 @@ public class TestSucursal {
         int cantidadBeneficiosOtorgados = 0;
 
         Assert.assertEquals(cantidadBeneficiosOtorgados, sucursal.obtenerBeneficiosOtorgados().size());
+    }
+
+    @Test(expected = ExcepcionValorMinimoDosPorUno.class)
+    public void errorAlRegistrarProductoDosPorUnoConDosProductosDeValorMenorACien() {
+        String nombreSucursal = "Nombre Sucursal";
+        String direccionSucursal = "Calle Falsa";
+        String nombreEstablecimiento = "Nombre Establecimiento";
+        String emailEstabablecimiento = "example@example.com";
+        Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
+        Sucursal sucursal = new Sucursal(nombreSucursal, direccionSucursal, establecimiento);
+        Cliente cliente = new Cliente("Leandro", "baldileandro@gmail.com", TARJETA_BENEFICIO.PREMIUM);
+        Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
+
+        sucursal.registrarBeneficioCompraDosPorUno(cliente, productoValorDiez, productoValorDiez, new Mes("2017/04"));
     }
 
 }

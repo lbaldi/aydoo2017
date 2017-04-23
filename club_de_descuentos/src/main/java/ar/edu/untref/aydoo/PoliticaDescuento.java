@@ -6,7 +6,7 @@ public class PoliticaDescuento {
         if (porcentaje < 5.0) throw new ExcepcionPorcentajeDescuentoEstablecimiento();
     }
 
-    public static void comprobarValorMinimoDosPorUno(Double valor){
+    public static void comprobarValorMinimoDosPorUno(Double valor) {
         if (valor < 100.0) throw new ExcepcionValorMinimoDosPorUno();
     }
 
