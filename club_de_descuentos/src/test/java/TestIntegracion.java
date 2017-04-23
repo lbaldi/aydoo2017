@@ -73,8 +73,8 @@ public class TestIntegracion {
         restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
         Sucursal s3 = new Sucursal("s3", "Direccion s3", restaurantB);
         // Registro de establecimiento al club de descuento
-        clubDeDescuento.adherirEstablecimiento(heladeriaA);
         clubDeDescuento.adherirEstablecimiento(restaurantB);
+        clubDeDescuento.adherirEstablecimiento(heladeriaA);
         // Clientes que realizaran las operaciones
         Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TARJETA_BENEFICIO.CLASSIC);
         Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
@@ -96,7 +96,6 @@ public class TestIntegracion {
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, this.mes);
-
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, new Mes("Otro Mes"));
