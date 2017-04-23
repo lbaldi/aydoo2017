@@ -34,7 +34,7 @@ public class Sucursal {
         return this.establecimiento;
     }
 
-    public List<Beneficio> obtenerBeneficiosOtorgados() {
+    protected List<Beneficio> obtenerBeneficiosOtorgados() {
         return this.beneficiosOtorgados;
     }
 
@@ -52,10 +52,6 @@ public class Sucursal {
 
     protected Double obtenerDescuentoSegunTarjeta(TARJETA_BENEFICIO tarjetaBeneficio) {
         return this.obtenerEstablecimiento().obtenerTipoBeneficios().get(tarjetaBeneficio);
-    }
-
-    public Integer obtenerCantidadDeBeneficiosOtorgados() {
-        return this.obtenerBeneficiosOtorgados().size();
     }
 
     public Integer obtenerCantidadDeBeneficiosOtorgadosPorMes(Mes mes) {

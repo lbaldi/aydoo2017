@@ -40,32 +40,6 @@ public class TestSucursal {
         Assert.assertEquals(establecimiento, sucursal.obtenerEstablecimiento());
     }
 
-    @Test
-    public void crearSucursarYObtenerCantidadBeneficiosOtorgados() {
-        String nombreSucursal = "Nombre Sucursal";
-        String direccionSucursal = "Calle Falsa";
-        String nombreEstablecimiento = "Nombre Establecimiento";
-        String emailEstabablecimiento = "example@example.com";
-        Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
-        Sucursal sucursal = new Sucursal(nombreSucursal, direccionSucursal, establecimiento);
-        Integer cantidadBeneficiosOtorgados = 0;
-
-        Assert.assertEquals(cantidadBeneficiosOtorgados, sucursal.obtenerCantidadDeBeneficiosOtorgados());
-    }
-
-    @Test
-    public void crearSucursalYObtenerBeneficiosOtorgados() {
-        String nombreSucursal = "Nombre Sucursal";
-        String direccionSucursal = "Calle Falsa";
-        String nombreEstablecimiento = "Nombre Establecimiento";
-        String emailEstabablecimiento = "example@example.com";
-        Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
-        Sucursal sucursal = new Sucursal(nombreSucursal, direccionSucursal, establecimiento);
-        int cantidadBeneficiosOtorgados = 0;
-
-        Assert.assertEquals(cantidadBeneficiosOtorgados, sucursal.obtenerBeneficiosOtorgados().size());
-    }
-
     @Test(expected = ExcepcionValorMinimoDosPorUno.class)
     public void errorAlRegistrarProductoDosPorUnoConDosProductosDeValorMenorACien() {
         String nombreSucursal = "Nombre Sucursal";
