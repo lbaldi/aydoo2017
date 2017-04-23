@@ -39,10 +39,10 @@ public class Establecimiento {
         this.obtenerTipoBeneficios().put(tarjetaBeneficio, descuento);
     }
 
-    public Integer obtenerCantidadDeBeneficiosOtorgados() {
+    public Integer obtenerCantidadDeBeneficiosOtorgados(Mes mes) {
         Integer cantidadBeneficiosOtorgados = 0;
         for (Sucursal sucursales : this.obtenerSucursales()) {
-            cantidadBeneficiosOtorgados += sucursales.obtenerCantidadDeBeneficiosOtorgados();
+            cantidadBeneficiosOtorgados += sucursales.obtenerCantidadDeBeneficiosOtorgadosPorMes(mes);
         }
         return cantidadBeneficiosOtorgados;
     }

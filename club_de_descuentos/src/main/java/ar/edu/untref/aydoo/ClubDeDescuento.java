@@ -34,11 +34,11 @@ public class ClubDeDescuento {
         return this.clientes;
     }
 
-    public Establecimiento obtenerEstablecimientoConMasBeneficiosOtorgados() {
+    public Establecimiento obtenerEstablecimientoConMasBeneficiosOtorgados(Mes mes) {
         Establecimiento establecimientoConMasCantidadDeBeneficios = null;
         Integer cantidadMayorDeBeneficios = 0;
         for (Establecimiento establecimiento : this.obtenerEstablecimientos()) {
-            Integer cantidadDeBeneficios = establecimiento.obtenerCantidadDeBeneficiosOtorgados();
+            Integer cantidadDeBeneficios = establecimiento.obtenerCantidadDeBeneficiosOtorgados(mes);
             if (cantidadDeBeneficios > cantidadMayorDeBeneficios) {
                 cantidadMayorDeBeneficios = cantidadDeBeneficios;
                 establecimientoConMasCantidadDeBeneficios = establecimiento;

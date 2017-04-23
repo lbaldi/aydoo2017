@@ -101,7 +101,7 @@ public class TestEstablecimiento {
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Integer cantidadBeneficiosOtorgadoEsperado = 0;
 
-        Assert.assertEquals(cantidadBeneficiosOtorgadoEsperado, establecimiento.obtenerCantidadDeBeneficiosOtorgados());
+        Assert.assertEquals(cantidadBeneficiosOtorgadoEsperado, establecimiento.obtenerCantidadDeBeneficiosOtorgados(new Mes("Un mes")));
     }
 
     @Test

@@ -53,7 +53,7 @@ public class TestIntegracion {
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
         s3.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
 
-        Establecimiento establecimientoConMasBeneficiosOtorgados = clubDeDescuento.obtenerEstablecimientoConMasBeneficiosOtorgados();
+        Establecimiento establecimientoConMasBeneficiosOtorgados = clubDeDescuento.obtenerEstablecimientoConMasBeneficiosOtorgados(abril2017);
 
         Assert.assertEquals(heladeriaA, establecimientoConMasBeneficiosOtorgados);
     }
