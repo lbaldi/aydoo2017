@@ -16,7 +16,7 @@ public class TestIntegracion {
     }
 
     @Test
-    public void testObtenerEstablecimientoConMasBeneficiosOtorgados() {
+    public void ObtenerEstablecimientoConMasBeneficiosOtorgadosEnMultiplesComprasDeClientesEnDiferentesSucursalesYDiferentesMeses() {
         Mes abril2017 = new Mes("2017/04");
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
@@ -59,7 +59,7 @@ public class TestIntegracion {
     }
 
     @Test
-    public void testObtenerSucursalConMasBeneficiosOtorgados() {
+    public void ObtenerSucursalConMasBeneficiosOtorgadosEnMultiplesComprasDeClientesEnDiferentesSucursalesYDiferentesMeses() {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
         Establecimiento heladeriaA = new Establecimiento("Heladeria A", "heladeria@restaurantB.edu.ar");
@@ -106,7 +106,7 @@ public class TestIntegracion {
     }
 
     @Test
-    public void testObtenerTotalDeAhorroPorCliente() {
+    public void testObtenerTotalDeAhorroPorClienteEnMultiplesComprasDeClientesEnDiferentesSucursalesYDiferentesMeses() {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
         Establecimiento heladeriaA = new Establecimiento("Heladeria A", "heladeria@restaurantB.edu.ar");
