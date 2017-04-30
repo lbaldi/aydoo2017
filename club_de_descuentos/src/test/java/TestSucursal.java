@@ -48,7 +48,7 @@ public class TestSucursal {
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Sucursal sucursal = new Sucursal(nombreSucursal, direccionSucursal, establecimiento);
-        Cliente cliente = new Cliente("Leandro", "baldileandro@gmail.com", TARJETA_BENEFICIO.PREMIUM);
+        Cliente cliente = new Cliente("Leandro", "baldileandro@gmail.com", TarjetaBeneficio.PREMIUM);
         Producto productoValorDiez = new Producto("Producto con valor diez", 10.0);
 
         sucursal.registrarBeneficioCompraDosPorUno(cliente, productoValorDiez, productoValorDiez, new Mes("2017/04"));

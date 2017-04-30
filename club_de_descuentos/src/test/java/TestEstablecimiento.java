@@ -77,7 +77,7 @@ public class TestEstablecimiento {
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Double descuento = 20.0;
-        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
+        establecimiento.adherirTipoBeneficio(descuento, TarjetaBeneficio.CLASSIC);
 
         Assert.assertEquals(1, establecimiento.obtenerTipoBeneficios().size());
     }
@@ -88,8 +88,8 @@ public class TestEstablecimiento {
         String emailEstabablecimiento = "example@example.com";
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Double descuento = 20.0;
-        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
-        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
+        establecimiento.adherirTipoBeneficio(descuento, TarjetaBeneficio.CLASSIC);
+        establecimiento.adherirTipoBeneficio(descuento, TarjetaBeneficio.CLASSIC);
 
         Assert.assertEquals(1, establecimiento.obtenerTipoBeneficios().size());
     }
@@ -120,7 +120,7 @@ public class TestEstablecimiento {
         Establecimiento establecimiento = new Establecimiento(nombreEstablecimiento, emailEstabablecimiento);
         Double descuento = 4.9;
 
-        establecimiento.adherirTipoBeneficio(descuento, TARJETA_BENEFICIO.CLASSIC);
+        establecimiento.adherirTipoBeneficio(descuento, TarjetaBeneficio.CLASSIC);
     }
 
 }

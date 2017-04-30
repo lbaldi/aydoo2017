@@ -11,7 +11,7 @@ public class Establecimiento {
 
     protected String mail;
 
-    protected Map<TARJETA_BENEFICIO, Double> tipoBeneficios;
+    protected Map<TarjetaBeneficio, Double> tipoBeneficios;
 
     protected Set<Sucursal> sucursales;
 
@@ -30,11 +30,11 @@ public class Establecimiento {
         return this.mail;
     }
 
-    public Map<TARJETA_BENEFICIO, Double> obtenerTipoBeneficios() {
+    public Map<TarjetaBeneficio, Double> obtenerTipoBeneficios() {
         return this.tipoBeneficios;
     }
 
-    public void adherirTipoBeneficio(double descuento, TARJETA_BENEFICIO tarjetaBeneficio) {
+    public void adherirTipoBeneficio(double descuento, TarjetaBeneficio tarjetaBeneficio) {
         PoliticaDescuento.comprobarPorcentajeDescuento(descuento);
         this.obtenerTipoBeneficios().put(tarjetaBeneficio, descuento);
     }

@@ -21,23 +21,23 @@ public class TestIntegracion {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
         Establecimiento heladeriaA = new Establecimiento("Heladeria A", "heladeria@restaurantB.edu.ar");
-        heladeriaA.adherirTipoBeneficio(10.0, TARJETA_BENEFICIO.CLASSIC);
-        heladeriaA.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
+        heladeriaA.adherirTipoBeneficio(10.0, TarjetaBeneficio.CLASSIC);
+        heladeriaA.adherirTipoBeneficio(20.0, TarjetaBeneficio.PREMIUM);
         Sucursal s1 = new Sucursal("s1", "Direccion s1", heladeriaA);
         Sucursal s2 = new Sucursal("s2", "Direccion s2", heladeriaA);
         // Establecimiento Restaurant B, sucursales y tipo de beneficios segun tarjeta
         Establecimiento restaurantB = new Establecimiento("Restaurant B", "establecimiento@restaurantB.edu.ar");
-        restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.CLASSIC);
-        restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
+        restaurantB.adherirTipoBeneficio(20.0, TarjetaBeneficio.CLASSIC);
+        restaurantB.adherirTipoBeneficio(20.0, TarjetaBeneficio.PREMIUM);
         Sucursal s3 = new Sucursal("s3", "Direccion s3", restaurantB);
         // Registro de establecimiento al club de descuento
         clubDeDescuento.adherirEstablecimiento(heladeriaA);
         clubDeDescuento.adherirEstablecimiento(restaurantB);
         // Clientes que realizaran las operaciones
-        Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TARJETA_BENEFICIO.CLASSIC);
-        Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-        Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-        Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
+        Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TarjetaBeneficio.CLASSIC);
+        Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
+        Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
+        Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
         Producto producto = new Producto("Producto Prueba", 1000.0);
         s1.registrarBeneficioCompraProducto(carlos, producto, abril2017);
         s1.registrarBeneficioCompraProducto(clienteClassic, producto, abril2017);
@@ -63,23 +63,23 @@ public class TestIntegracion {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
         Establecimiento heladeriaA = new Establecimiento("Heladeria A", "heladeria@restaurantB.edu.ar");
-        heladeriaA.adherirTipoBeneficio(10.0, TARJETA_BENEFICIO.CLASSIC);
-        heladeriaA.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
+        heladeriaA.adherirTipoBeneficio(10.0, TarjetaBeneficio.CLASSIC);
+        heladeriaA.adherirTipoBeneficio(20.0, TarjetaBeneficio.PREMIUM);
         Sucursal s1 = new Sucursal("s1", "Direccion s1", heladeriaA);
         Sucursal s2 = new Sucursal("s2", "Direccion s2", heladeriaA);
         // Establecimiento Restaurant B, sucursales y tipo de beneficios segun tarjeta
         Establecimiento restaurantB = new Establecimiento("Restaurant B", "establecimiento@restaurantB.edu.ar");
-        restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.CLASSIC);
-        restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
+        restaurantB.adherirTipoBeneficio(20.0, TarjetaBeneficio.CLASSIC);
+        restaurantB.adherirTipoBeneficio(20.0, TarjetaBeneficio.PREMIUM);
         Sucursal s3 = new Sucursal("s3", "Direccion s3", restaurantB);
         // Registro de establecimiento al club de descuento
         clubDeDescuento.adherirEstablecimiento(restaurantB);
         clubDeDescuento.adherirEstablecimiento(heladeriaA);
         // Clientes que realizaran las operaciones
-        Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TARJETA_BENEFICIO.CLASSIC);
-        Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-        Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-        Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
+        Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TarjetaBeneficio.CLASSIC);
+        Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
+        Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
+        Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
 
         Producto producto = new Producto("Producto Prueba", 100.0);
 
@@ -110,23 +110,23 @@ public class TestIntegracion {
         ClubDeDescuento clubDeDescuento = new ClubDeDescuento();
         // Estableclimiento Heladeria A , sucursales y tipos de beneficio segun tarjeta
         Establecimiento heladeriaA = new Establecimiento("Heladeria A", "heladeria@restaurantB.edu.ar");
-        heladeriaA.adherirTipoBeneficio(10.0, TARJETA_BENEFICIO.CLASSIC);
-        heladeriaA.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
+        heladeriaA.adherirTipoBeneficio(10.0, TarjetaBeneficio.CLASSIC);
+        heladeriaA.adherirTipoBeneficio(20.0, TarjetaBeneficio.PREMIUM);
         Sucursal s1 = new Sucursal("s1", "Direccion s1", heladeriaA);
         Sucursal s2 = new Sucursal("s2", "Direccion s2", heladeriaA);
         // Establecimiento Restaurant B, sucursales y tipo de beneficios segun tarjeta
         Establecimiento restaurantB = new Establecimiento("Restaurant B", "establecimiento@restaurantB.edu.ar");
-        restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.CLASSIC);
-        restaurantB.adherirTipoBeneficio(20.0, TARJETA_BENEFICIO.PREMIUM);
+        restaurantB.adherirTipoBeneficio(20.0, TarjetaBeneficio.CLASSIC);
+        restaurantB.adherirTipoBeneficio(20.0, TarjetaBeneficio.PREMIUM);
         Sucursal s3 = new Sucursal("s3", "Direccion s3", restaurantB);
         // Registro de establecimiento al club de descuento
         clubDeDescuento.adherirEstablecimiento(heladeriaA);
         clubDeDescuento.adherirEstablecimiento(restaurantB);
         // Clientes que realizaran las operaciones
-        Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TARJETA_BENEFICIO.CLASSIC);
-        Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-        Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
-        Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TARJETA_BENEFICIO.PREMIUM);
+        Cliente carlos = clubDeDescuento.adherirCliente("Carlos", "carlos@aydoo.edu.ar", TarjetaBeneficio.CLASSIC);
+        Cliente juan = clubDeDescuento.adherirCliente("Juan", "juan@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
+        Cliente clientePremium = clubDeDescuento.adherirCliente("Cliente Anonimo Premium", "premium@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
+        Cliente clienteClassic = clubDeDescuento.adherirCliente("Cliente Anonimo Classic", "classic@aydoo.edu.ar", TarjetaBeneficio.PREMIUM);
 
         Producto producto = new Producto("Producto Prueba", 1000.0);
 
@@ -163,7 +163,7 @@ public class TestIntegracion {
         Establecimiento elAltillo = new Establecimiento("El Altillo", "libreria@elaltillo.edu.ar");
         Sucursal s4 = new Sucursal("s4", "Direccion s4", elAltillo);
         // Adhesion cliente
-        Cliente mateo = clubDeDescuento.adherirCliente("Mateo", "mateo@aydoo.edu.ar", TARJETA_BENEFICIO.CLASSIC);
+        Cliente mateo = clubDeDescuento.adherirCliente("Mateo", "mateo@aydoo.edu.ar", TarjetaBeneficio.CLASSIC);
         Producto libroMartinFierro = new Producto("Martin Fierro", 100.0);
         Producto libroElCantarDelCid = new Producto("El Cantar del Cid", 80.0);
         s4.registrarBeneficioCompraDosPorUno(mateo, libroMartinFierro, libroElCantarDelCid, this.mes);

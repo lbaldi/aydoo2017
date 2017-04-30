@@ -50,7 +50,7 @@ public class Sucursal {
         return valorCompra * (descuento / 100);
     }
 
-    protected Double obtenerDescuentoSegunTarjeta(TARJETA_BENEFICIO tarjetaBeneficio) {
+    protected Double obtenerDescuentoSegunTarjeta(TarjetaBeneficio tarjetaBeneficio) {
         return this.obtenerEstablecimiento().obtenerTipoBeneficios().get(tarjetaBeneficio);
     }
 

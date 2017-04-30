@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-public enum TARJETA_BENEFICIO {
+public enum TarjetaBeneficio {
     CLASSIC,
     PREMIUM;
 }

@@ -24,7 +24,7 @@ public class ClubDeDescuento {
         this.obtenerEstablecimientos().add(establecimiento);
     }
 
-    public Cliente adherirCliente(String nombreCliente, String mailCliente, TARJETA_BENEFICIO tarjetaBeneficio) {
+    public Cliente adherirCliente(String nombreCliente, String mailCliente, TarjetaBeneficio tarjetaBeneficio) {
         Cliente nuevoCliente = new Cliente(nombreCliente, mailCliente, tarjetaBeneficio);
         this.obtenerClientes().add(nuevoCliente);
         return nuevoCliente;
